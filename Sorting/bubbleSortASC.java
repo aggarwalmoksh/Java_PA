@@ -1,8 +1,8 @@
 package Sorting;
 
-import java.util.Arrays;
+import java.util.*;
 
-public class bubbleSortAlgo {
+public class bubbleSortASC {
     public static void bubbleSort(int[] arr){
         int n = arr.length;
         for (int i = 0; i < n-1; i++) {
