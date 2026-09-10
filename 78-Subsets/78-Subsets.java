@@ -1,21 +1,18 @@
-// Last updated: 8/20/2026, 1:35:52 PM
+// Last updated: 9/10/2026, 3:14:18 PM
 1class Solution {
 2    public List<List<Integer>> subsets(int[] nums) {
-3        List<List<Integer>> res = new ArrayList<>();
-4        List<Integer> current = new ArrayList<>();
-5        backtrack(0, current, nums, res);
-6        return res;
+3        List<List<Integer>> list = new ArrayList<>();
+4        Arrays.sort(nums);
+5        backtrack(list, new ArrayList<>(), nums, 0);
+6        return list;
 7    }
 8
-9    public void backtrack(int index, List<Integer> current, int[] nums, List<List<Integer>> res) {
-10        if (index == nums.length) {
-11            res.add(new ArrayList<>(current));
-12            return;
-13        }
-14
-15        current.add(nums[index]);
-16        backtrack(index+1, current, nums, res);
-17        current.remove(current.size()-1);
-18        backtrack(index+1, current, nums, res);
-19    }
-20}
+9    public void backtrack(List<List<Integer>> list, List<Integer> templist, int[] nums, int start) {
+10        list.add(new ArrayList<>(templist));
+11        for (int i = start; i < nums.length; i++) {
+12            templist.add(nums[i]);
+13            backtrack(list, templist, nums, i+1);
+14            templist.remove(templist.size() - 1);        
+15        }
+16    }
+17}
