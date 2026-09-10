@@ -1,4 +1,4 @@
-// Last updated: 9/10/2026, 2:47:24 AM
+// Last updated: 9/10/2026, 2:22:59 PM
 1/**
 2 * Definition for singly-linked list.
 3 * public class ListNode {
@@ -15,11 +15,11 @@
 14        if (list2 == null) return list1;
 15
 16        if (list1.val < list2.val) {
-17            list1.next = mergeTwoLists(list1.next, list2);
+17            list1.next = mergeTwoLists(list1.next , list2);
 18            return list1;
 19        }
 20        else {
-21            list2.next = mergeTwoLists(list1, list2.next);
+21            list2.next = mergeTwoLists(list1 , list2.next);
 22            return list2;
 23        }
 24    }
