@@ -1,8 +1,8 @@
-// Last updated: 9/21/2026, 4:58:05 PM
+// Last updated: 9/21/2026, 4:58:24 PM
 1class Solution {
 2    public String simplifyPath(String path) {
 3        Stack<String> st = new Stack<>();
-4        String[] folders = path.split("/+");
+4        String[] folders = path.split("/");
 5
 6        for (String folder : folders) {
 7            if (folder.equals(".") || folder.equals("")) {
