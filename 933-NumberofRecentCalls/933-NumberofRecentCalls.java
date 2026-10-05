@@ -1,4 +1,4 @@
-// Last updated: 10/5/2026, 5:12:54 PM
+// Last updated: 10/5/2026, 5:13:56 PM
 1import java.util.*;
 2
 3class RecentCounter {
@@ -12,7 +12,7 @@
 11        queue.add(t);
 12
 13        while (queue.peek() < t - 3000) {
-14            queue.remove();
+14            queue.poll();
 15        }
 16
 17        return queue.size();
